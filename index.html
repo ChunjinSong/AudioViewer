@@ -1,1 +1,116 @@
-AudioViewer
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>LatentKeypointGAN</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/citation.css">
+    <link rel="stylesheet" href="css/title.css">
+    <meta name="google-site-verification" content="QZBN3L69Q-c1oJGtwBx3eOj6ugnkjS7Q2tZUGm-VTkA"/>
+</head>
+
+<body>
+    <div class="header" id="home" style="padding-bottom: 90px;"></div>
+
+    <section class="title">
+        AudioViewer: Learning to Visualize Sounds
+    </section>
+
+    <section class="author">
+        <a href="https://chunjinsong.github.io/">Chunjin Song</a>
+        <a> Yuchi Zhang </a>
+        <a> Willis Peng </a>
+        <a> Parmis Mohaghegh </a>
+        <a href="https://www.cs.ubc.ca/~wandt/index.html">Bastian Wandt</a>
+        <a href="https://www.cs.ubc.ca/~rhodin/web/">Helge Rhodin</a>
+        <affiliation>The University of British Columbia</affiliation>
+        <a href="https://arxiv.org/pdf/2012.13341.pdf" class="links">[paper]</a>
+        <a href="" class="links">[code]</a>
+
+    </section>
+
+    <div class="container">
+        <video src="vid/audioviewer.mp4" type="video/mp4" controls>
+            Your browser does not support the video tag.
+        </video>
+<!--        <p>-->
+<!--            In this video, we fix all the embeddings and only change the keypoint locations. -->
+<!--            In the first example, we change all keypoint locations. -->
+<!--            In subsequent examples, individual parts are moved to edit the face locally. -->
+<!--            It is possible to faithfully move keypoints while the GAN maintains the overall integrity  of a natural face.-->
+<!--        </p>-->
+    </div>
+
+    <div class="header" id="abstract">Abstract</div>
+    <div class="line"></div>
+
+    <div class="container">
+        <p>
+            A long-standing goal in the field of sensory substitution is enabling sound perception for deaf and hard of hearing (DHH) people by visualizing audio content. Different from existing models that translate to hand sign language, between speech and text, or text and images, we target immediate and low-level audio to video translation that applies to generic environment sounds as well as human speech. Since such a substitution is artificial, without labels for supervised learning, our core contribution is to build a mapping from audio to video that learns from unpaired examples via high-level constraints. For speech, we additionally disentangle content from style, such as gender and dialect. Qualitative and quantitative results, including a human study, demonstrate that our unpaired translation approach maintains important audio features in the generated video and that videos of faces and numbers are well suited for visualizing high-dimensional audio features that can be parsed by humans to match and distinguish between sounds and words.
+        </p>
+    </div>
+
+    <h1 class="header" id="results">Overview</h1>
+    <div class="line"></div>
+    <div class="container">
+        <img style='height: 100%; width: 100%; object-fit: contain' src="vid/teaser.jpg">
+        <p>
+        <b>AudioViewer </b> A tool developed towards the long-term goal of helping hearing impaired persons to see what they can not hear. We map an audio stream to video and thereby use faces or numbers for visualizing the high-dimensional audio features intuitively. Different from the principle of lip reading, this can encode general sound and pass on information on the style of spoken language.
+        </p>
+    </div>
+
+    <h1 class="header" id="speech_results">Human Speech Visualization</h1>
+    <div class="line"></div>
+    <div class="container">
+        <video width="220" controls>
+          <source src="vid/sentence.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <p>
+            We use our model to visualize 3 test set utterances spoken by different people, as used for the training triplet. In the first two, different people speak the same sentence. The last two have the same speaker but different content. All three utterances are concatenated into a single audio/video.
+        </p>
+    </div>
+
+
+    <h1 class="header" id="env_results">Environment Sound Visualization</h1>
+    <div class="line"></div>
+    <div class="container">
+        <video width="220" height="400" controls>
+          <source src="vid/env.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <p>
+            Our phone-level model generalizes well to natural sounds despite being only trained on human speech.
+        </p>
+    </div>
+
+    <h1 class="header" id="demo">A Live Demo of AudioViewer</h1>
+    <div class="line"></div>
+    <div class="container">
+        <video src="vid/live.mp4" type="video/mp4" controls>
+            Your browser does not support the video tag.
+        </video>
+        <p>
+        This live recording of our AudioViewer prototype demonstrates that human speech can be visualized in real-time (the low-res version) and works for different subjects. The slight delay stems from our web application running on a consumer PC and the windowed FFT that is not yet optimized for streaming applications. We speak slowly to facilitate a better association of visualization and speech despite the noticeable delay.</p>
+    </div>
+
+
+
+
+    <section class="citation">
+        @article{zhang2020audioviewer,</br>
+          title={AudioViewer: learning to visualize sound},</br>
+          author={Zhang, Yuchi and Peng, Willis and Wandt, Bastian and Rhodin, Helge},</br>
+          journal={arXiv preprint arXiv:2012.13341},</br>
+          year={2020}</br>
+        }
+
+    </section>
+
+</body>
+
+</html>
